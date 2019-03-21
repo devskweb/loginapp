@@ -22,7 +22,7 @@ export class ListUserComponent implements OnInit {
   }
 
   deleteUser(user: User): void {
-    window.open();
+    if(confirm('Are you sure?')) 
     this.userService.deleteUser(user.id)
       .subscribe( data => {
         this.users = this.users.filter(u => u !== user);
